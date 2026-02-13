@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haridade AuxÃ­lio</title>
+<title>Haridade Auxílio</title>
 
 <style>
 body{
@@ -17,7 +17,6 @@ body{
     overflow:hidden;
     color:white;
 }
- <meta charset="UTF-8">
 
 /* FUNDO CHUVA */
 .rain{
@@ -70,7 +69,6 @@ h2{
     box-shadow:0 0 15px #8000ff;
 }
 
-/* CHECKBOX */
 label{
     display:block;
     margin-bottom:8px;
@@ -92,12 +90,10 @@ input[type="password"]{
     color:white;
 }
 
-/* SLIDER */
 .range{
     width:100%;
 }
 
-/* SELECT */
 select{
     width:100%;
     padding:10px;
@@ -107,7 +103,6 @@ select{
     color:white;
 }
 
-/* BOTÃƒO */
 button{
     width:100%;
     padding:15px;
@@ -133,21 +128,21 @@ button{
 
 <!-- LOGIN -->
 <div class="card" id="login">
-    <h2>haridadevsk ðŸ”</h2>
-    <input type="text" id="usuario" placeholder="UsuÃ¡rio">
+    <h2>haridadevsk 🔐</h2>
+    <input type="text" id="usuario" placeholder="Usuário">
     <input type="password" id="senha" placeholder="Senha">
     <button onclick="entrar()">ENTRAR</button>
 </div>
 
 <!-- PAINEL -->
 <div class="card" id="painel">
-    <h2>HARIDADE AUXILIO</h2>
+    <h2>HARIDADE AUXÍLIO</h2>
 
     <div class="box">
         <label><input type="checkbox">Modo Pro</label>
-        <label><input type="checkbox">Aumentar PrecisÃ£o</label>
+        <label><input type="checkbox">Aumentar Precisão</label>
         <label><input type="checkbox">Modo FPS</label>
-        <label><input type="checkbox">OtimizaÃ§Ã£o</label>
+        <label><input type="checkbox">Otimização</label>
     </div>
 
     <div class="box">
@@ -158,8 +153,8 @@ button{
 
     <div class="box">
         <select>
-            <option>CabeÃ§a</option>
-            <option>PescoÃ§o</option>
+            <option>Cabeça</option>
+            <option>Pescoço</option>
             <option>Peito</option>
         </select>
     </div>
@@ -173,12 +168,12 @@ function entrar(){
         document.getElementById("login").style.display="none";
         document.getElementById("painel").style.display="block";
     } else {
-        alert("Login invÃ¡lido");
+        alert("Login inválido");
     }
 }
 
 function ativar(){
-    alert("ðŸ”¥ Ativado ðŸ”¥");
+    alert("🔥 Ativado 🔥");
 }
 
 /* GERAR CHUVA */
