@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haridade AuxÃ­lio</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#140022;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    color:white;
+}
+
+/* FUNDO CHUVA */
+.rain{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.drop{
+    position:absolute;
+    width:2px;
+    height:25px;
+    background:linear-gradient(transparent,#b84dff);
+    animation:fall linear infinite;
+    opacity:0.7;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-100px);}
+    100%{transform:translateY(100vh);}
+}
+
+/* LOGIN + PAINEL */
+.card{
+    position:relative;
+    width:320px;
+    background:#1e0033;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 0 30px #a020f0;
+    z-index:2;
+}
+
+h2{
+    text-align:center;
+    color:#d580ff;
+    margin-bottom:20px;
+}
+
+/* BOXES */
+.box{
+    background:#2a004d;
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:15px;
+    box-shadow:0 0 15px #8000ff;
+}
+
+/* CHECKBOX */
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+input[type="checkbox"]{
+    margin-right:8px;
+}
+
+input[type="text"],
+input[type="password"]{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:15px;
+    background:#2a004d;
+    color:white;
+}
+
+/* SLIDER */
+.range{
+    width:100%;
+}
+
+/* SELECT */
+select{
+    width:100%;
+    padding:10px;
+    border-radius:12px;
+    border:none;
+    background:#3a0066;
+    color:white;
+}
+
+/* BOTÃƒO */
+button{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#a020f0,#ff00ff);
+    color:white;
+    cursor:pointer;
+}
+
+#painel{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="rain" id="rain"></div>
+
+<!-- LOGIN -->
+<div class="card" id="login">
+    <h2>haridadevsk ðŸ”</h2>
+    <input type="text" id="usuario" placeholder="UsuÃ¡rio">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="entrar()">ENTRAR</button>
+</div>
+
+<!-- PAINEL -->
+<div class="card" id="painel">
+    <h2>HARIDADE AUXILIO</h2>
+
+    <div class="box">
+        <label><input type="checkbox">Modo Pro</label>
+        <label><input type="checkbox">Aumentar PrecisÃ£o</label>
+        <label><input type="checkbox">Modo FPS</label>
+        <label><input type="checkbox">OtimizaÃ§Ã£o</label>
+    </div>
+
+    <div class="box">
+        <p>FOV: <span id="valor">100</span></p>
+        <input class="range" type="range" min="0" max="200" value="100"
+        oninput="valor.innerText=this.value">
+    </div>
+
+    <div class="box">
+        <select>
+            <option>CabeÃ§a</option>
+            <option>PescoÃ§o</option>
+            <option>Peito</option>
+        </select>
+    </div>
+
+    <button onclick="ativar()">ATIVAR</button>
+</div>
+
+<script>
+function entrar(){
+    if(usuario.value === "haridadevsk" && senha.value === "1234"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("painel").style.display="block";
+    } else {
+        alert("Login invÃ¡lido");
+    }
+}
+
+function ativar(){
+    alert("ðŸ”¥ Ativado ðŸ”¥");
+}
+
+/* GERAR CHUVA */
+const rain = document.getElementById("rain");
+for(let i=0;i<100;i++){
+    let drop = document.createElement("div");
+    drop.classList.add("drop");
+    drop.style.left = Math.random()*100+"vw";
+    drop.style.animationDuration = (0.5+Math.random()*1)+"s";
+    drop.style.animationDelay = Math.random()*5+"s";
+    rain.appendChild(drop);
+}
+</script>
+
+</body>
+</html>
